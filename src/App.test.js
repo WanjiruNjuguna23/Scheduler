@@ -1,8 +1,18 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders Auto-Planner title', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const titleElement = screen.getByText(/Auto-Planner/i); //check for title
+  expect(titleElement).toBeInTheDocument();
+});
+
+test('renders navigation links', () => {
+  render(<App />);
+  
+  const homeLink = screen.getByText(/home/i); // Check for "Home" link
+  expect(homeLink).toBeInTheDocument();
+
+  const scheduleLink = screen.getByText(/schedule/i); // Check for "Schedule" link
+  expect(scheduleLink).toBeInTheDocument();
 });
